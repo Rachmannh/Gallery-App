@@ -42,6 +42,7 @@ const LearnNetworking = ({navigation}) => {
         setMyData(results);
         setIsLoading(false);
         await AsyncStorage.setItem('token', results.data.token);
+        navigation.navigate('HomePage');
       }
     } catch (e) {
       console.error(e);
@@ -70,5 +71,7 @@ const LearnNetworking = ({navigation}) => {
     </View>
   );
 };
+
+const style = StyleSheet.create({});
 
 export default LearnNetworking;

@@ -1,8 +1,10 @@
 import React from 'react';
-import {View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
-function Home() {
+const PageA = () => {
   return <View></View>;
-}
+};
 
-export default Home;
+const style = StyleSheet.create({});
+
+export default PageA;

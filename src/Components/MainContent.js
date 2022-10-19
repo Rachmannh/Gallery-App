@@ -8,7 +8,7 @@ const MainContent = () => {
         <Image
           style={styles.image}
           source={{
-            uri: 'https://1.bp.blogspot.com/-mNPimefwIZ0/YSBq-YRfuqI/AAAAAAAATVA/PCnhqCvEn-cGkgYtSZeVDntnKWJJqT7NwCLcBGAsYHQ/s1181/Telkomsel%2BTerbaru.png',
+            uri: '../Images/Logo.svg',
           }}
         />
       </View>
