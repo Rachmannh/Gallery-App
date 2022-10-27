@@ -1,16 +1,21 @@
 import React from 'react';
 import {Image, View, StyleSheet} from 'react-native';
+import {
+  responsiveScreenHeight,
+  responsiveScreenWidth,
+  responsiveScreenFontSize,
+} from 'react-native-responsive-dimensions';
 
 const MainContent = () => {
   return (
     <>
       <View style={styles.container}>
-        <Image
-          style={styles.image}
-          source={{
-            uri: '../Images/Logo.svg',
-          }}
-        />
+        <View>
+          <Image
+            style={styles.image}
+            source={require('../Img/main-content-img.png')}
+          />
+        </View>
       </View>
     </>
   );
@@ -18,14 +23,13 @@ const MainContent = () => {
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 100,
+    padding: 80,
   },
   image: {
-    width: 250,
-    height: 250,
+    width: responsiveScreenWidth(90),
+    height: responsiveScreenHeight(30),
   },
 });
 
