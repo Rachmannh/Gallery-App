@@ -8,9 +8,8 @@ import {
   FlatList,
 } from 'react-native';
 import {responsiveScreenWidth} from 'react-native-responsive-dimensions';
-import Navigation from '@react-navigation/native';
 
-const PhotoList = props => {
+const PhotoList = ({item}) => {
   const [results, setResults] = useState([]);
 
   let page = 0;
@@ -35,7 +34,6 @@ const PhotoList = props => {
       .then(res => res.json())
       .then(json => {
         setResults(json.data);
-        console.log('tester data', json.data);
       })
       .catch(error => console.log('err', error));
   };

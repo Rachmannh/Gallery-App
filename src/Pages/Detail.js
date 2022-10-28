@@ -1,25 +1,27 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {
   responsiveFontSize,
   responsiveScreenHeight,
   responsiveScreenWidth,
+  responsiveWidth,
 } from 'react-native-responsive-dimensions';
 
-const Detail = (route, navigation) => {
+const Detail = ({route}) => {
   let results = route.params;
-
-  console.log('TESTERAN PARAMS', full_image_url);
 
   return (
     <View style={styles.container}>
       <View style={styles.imagesContainer}>
-        <Image style={styles.images} source={{uri: results.full_image_url}} />
+        <Image
+          style={styles.images}
+          source={{uri: results.item?.full_image_url}}
+        />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.titleText}>Image Title</Text>
-        <Text style={styles.uploadText}>Upload Date</Text>
-        <Text style={styles.descText}>Description Text</Text>
+        <Text style={styles.titleText}>{results.item?.title}</Text>
+        <Text style={styles.uploadText}>{results.item?.created_at}</Text>
+        <Text style={styles.descText}>{results.item?.description}</Text>
       </View>
     </View>
   );
@@ -36,12 +38,13 @@ const styles = StyleSheet.create({
   },
   images: {
     width: responsiveScreenWidth(100),
-    height: responsiveScreenHeight(40),
+    height: responsiveScreenHeight(47),
     backgroundColor: '000',
     aspectRatio: 1,
   },
   textContainer: {
-    flex: 1,
+    flex: 0.6,
+    marginVertical: 90,
   },
   titleText: {
     fontSize: responsiveFontSize(3),
@@ -60,7 +63,7 @@ const styles = StyleSheet.create({
     color: '#000',
     alignSelf: 'flex-start',
     marginHorizontal: 10,
-    marginVertical: 10,
+    marginVertical: 2,
   },
 });
 
